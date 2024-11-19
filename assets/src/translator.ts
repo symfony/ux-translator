@@ -47,8 +47,8 @@ export function setLocale(locale: LocaleType | null) {
 export function getLocale(): LocaleType {
     return (
         _locale ||
-        document.documentElement.getAttribute('data-symfony-ux-translator-locale') || // <html data-symfony-ux-translator-locale="en">
-        document.documentElement.lang || // <html lang="en">
+        document.documentElement.getAttribute('data-symfony-ux-translator-locale') || // <html data-symfony-ux-translator-locale="en_US">
+        (document.documentElement.lang ? document.documentElement.lang.replace('-', '_') : null) || // <html lang="en-US">
         'en'
     );
 }

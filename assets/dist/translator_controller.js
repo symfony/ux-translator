@@ -227,7 +227,7 @@ function setLocale(locale) {
 function getLocale() {
     return (_locale ||
         document.documentElement.getAttribute('data-symfony-ux-translator-locale') ||
-        document.documentElement.lang ||
+        (document.documentElement.lang ? document.documentElement.lang.replace('-', '_') : null) ||
         'en');
 }
 function throwWhenNotFound(enabled) {

@@ -90,9 +90,9 @@ Configuring the default locale
 
 By default, the default locale is ``en`` (English) that you can configure through many ways (in order of priority):
 
-#. With ``setLocale('your-locale')`` from ``@symfony/ux-translator`` package
-#. Or with ``<html data-symfony-ux-translator-locale="your-locale">`` attribute
-#. Or with ``<html lang="your-locale">`` attribute
+#. With ``setLocale('de')`` or ``setLocale('de_AT')`` from ``@symfony/ux-translator`` package
+#. Or with ``<html data-symfony-ux-translator-locale="{{ app.request.locale }}">`` attribute (e.g., ``de_AT`` or ``de`` using Symfony locale format)
+#. Or with ``<html lang="{{ app.request.locale|replace({ '_': '-' }) }}">`` attribute (e.g., ``de-AT`` or ``de`` following the `W3C specification on language codes`_)
 
 Detecting missing translations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,3 +191,4 @@ https://symfony.com/doc/current/contributing/code/bc.html
 .. _`the Symfony UX initiative`: https://ux.symfony.com/
 .. _StimulusBundle configured in your app: https://symfony.com/bundles/StimulusBundle/current/index.html
 .. _`ICU Message Format`: https://symfony.com/doc/current/reference/formats/message_format.html
+.. _`W3C specification on language codes`: https://www.w3.org/TR/html401/struct/dirlang.html#h-8.1.1
