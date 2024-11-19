@@ -35,6 +35,18 @@ describe('Translator', () => {
         });
     });
 
+    describe('getLocale', () => {
+        test('with subcode', () => {
+            // allow format according to W3C
+            document.documentElement.lang = 'de-AT';
+            expect(getLocale()).toEqual('de_AT');
+
+            // or "incorrect" Symfony locale format
+            document.documentElement.lang = 'de_AT';
+            expect(getLocale()).toEqual('de_AT');
+        });
+    });
+
     describe('setLocale', () => {
         test('custom locale', () => {
             setLocale('fr');

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2.22.0
+
+-   Support both the Symfony format (`fr_FR`) and W3C specification (`fr-FR`) for locale subcodes.
+
 ## 2.20.0
 
 -   Add `throwWhenNotFound` function to configure the behavior when a translation is not found.
