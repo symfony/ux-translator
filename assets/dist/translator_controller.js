@@ -1,20 +1,5 @@
 import { IntlMessageFormat } from 'intl-messageformat';
 
-function formatIntl(id, parameters, locale) {
-    if (id === '') {
-        return '';
-    }
-    const intlMessage = new IntlMessageFormat(id, [locale.replace('_', '-')], undefined, { ignoreTag: true });
-    parameters = { ...parameters };
-    Object.entries(parameters).forEach(([key, value]) => {
-        if (key.includes('%') || key.includes('{')) {
-            delete parameters[key];
-            parameters[key.replace(/[%{} ]/g, '').trim()] = value;
-        }
-    });
-    return intlMessage.format(parameters);
-}
-
 function strtr(string, replacePairs) {
     const regex = Object.entries(replacePairs).map(([from]) => {
         return from.replace(/([-[\]{}()*+?.\\^$|#,])/g, '\\$1');
@@ -216,6 +201,21 @@ function getPluralizationRule(number, locale) {
         default:
             return 0;
     }
+}
+
+function formatIntl(id, parameters, locale) {
+    if (id === '') {
+        return '';
+    }
+    const intlMessage = new IntlMessageFormat(id, [locale.replace('_', '-')], undefined, { ignoreTag: true });
+    parameters = { ...parameters };
+    Object.entries(parameters).forEach(([key, value]) => {
+        if (key.includes('%') || key.includes('{')) {
+            delete parameters[key];
+            parameters[key.replace(/[%{} ]/g, '').trim()] = value;
+        }
+    });
+    return intlMessage.format(parameters);
 }
 
 let _locale = null;

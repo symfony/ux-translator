@@ -33,8 +33,8 @@ export interface Message<Translations extends TranslationsType, Locale extends L
     };
 }
 
-import { formatIntl } from './formatters/intl-formatter';
 import { format } from './formatters/formatter';
+import { formatIntl } from './formatters/intl-formatter';
 
 let _locale: LocaleType | null = null;
 let _localeFallbacks: Record<LocaleType, LocaleType> = {};
