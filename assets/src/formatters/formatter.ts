@@ -47,7 +47,7 @@ import { strtr } from '../utils';
  * @param parameters An array of parameters for the message
  * @param locale     The locale
  */
-export function format(id: string, parameters: Record<string, string | number>, locale: string): string {
+export function format(id: string, parameters: Record<string, string | number | Date>, locale: string): string {
     if (null === id || '' === id) {
         return '';
     }
