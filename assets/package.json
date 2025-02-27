@@ -7,7 +7,7 @@
         "symfony-ux"
     ],
     "homepage": "https://ux.symfony.com/translator",
-    "repository": "https://github.com/symfony/ux-translator/tree/2.x",
+    "repository": "https://github.com/symfony/ux-translator",
     "type": "module",
     "files": [
         "dist"
