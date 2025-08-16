@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { strtr } from '../src/utils';
+import { strtr } from '../../src/utils';
 
 describe('Utils', () => {
     test.concurrent.each<[string, string, Record<string, string>]>([

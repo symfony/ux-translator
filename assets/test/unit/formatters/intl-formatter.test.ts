@@ -8,7 +8,7 @@
  */
 
 import { describe, expect, test } from 'vitest';
-import { formatIntl } from '../../src/formatters/intl-formatter';
+import { formatIntl } from '../../../src/formatters/intl-formatter';
 
 describe('Intl Formatter', () => {
     test('format with named arguments', () => {

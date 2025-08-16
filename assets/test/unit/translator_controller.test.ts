@@ -7,7 +7,7 @@ import {
     setLocaleFallbacks,
     throwWhenNotFound,
     trans,
-} from '../src/translator_controller';
+} from '../../src/translator_controller';
 
 describe('Translator', () => {
     beforeEach(() => {
