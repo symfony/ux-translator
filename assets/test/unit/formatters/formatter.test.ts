@@ -8,7 +8,7 @@
  */
 
 import { describe, expect, test } from 'vitest';
-import { format } from '../../src/formatters/formatter';
+import { format } from '../../../src/formatters/formatter';
 
 describe('Formatter', () => {
     test.concurrent.each<[string, string, Record<string, string | number>]>([
