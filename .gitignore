@@ -6,3 +6,5 @@
 /.phpunit.cache
 
 /var
+
+test-updating
